@@ -1,0 +1,191 @@
+/* Base reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Dark Theme */
+:root {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+
+    --color-bg: #14161A;
+    --color-secondary: #1C2026;
+    --color-text-primary: #FDFEFE;
+    --color-text-secondary: #14161A;
+    --color-accent: #FDA93C;
+    --color-shadow: rgba(223, 239, 255, 0.2);
+}
+
+/* Light Theme  */
+:root.light {
+    --color-bg: #FDFEFE;
+    --color-secondary: #E9ECEF;
+    --color-text-primary: #14161A;
+    --color-text-secondary: #FDFEFE;
+    --color-accent: #FDA93C;
+    --color-shadow: rgba(55, 61, 66, 0.2);
+}
+
+
+body {
+    background: var(--color-bg);
+    height: 100dvh;     /* 100% of viewport height (dynamic for mobile safe area) */
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    background: var(--color-secondary);
+    color: var(--color-text-primary);
+    height: auto;
+    width: min(60rem, 90%);     /* responsive width */
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Head Section */
+
+.head {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Inputs Section */
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    padding: 0rem 2rem;
+}
+
+/* Tablet and above */
+@media (min-width: 600px) {
+    .inputs {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #searchCity {
+        flex: 1;    /* input grows */
+        width: auto;
+    }
+
+    #searchBtn {
+        width: auto;
+        flex-shrink: 0;     /* button doesn’t shrink */
+    }
+}
+
+/* Larger screens */
+@media (min-width: 1024px) {
+    .content {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .inputs {
+        max-width: 40rem;
+    }
+}
+
+/* Search Input */
+#searchCity {
+    border: none;
+    outline: none;
+    width: 100%;
+    border-radius: 100px;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+}
+
+#searchCity:focus {
+    box-shadow: var(--color-shadow) 0px 8px 24px;
+}
+
+/* Search button */
+#searchBtn {
+    padding: 0.75rem 4rem;
+    border-radius: 100px;
+    transition: box-shadow 0.2s ease-in;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#searchBtn:hover {
+    box-shadow: var(--color-shadow) 0px 8px 24px;
+}
+
+
+
+/* Weather Info */
+.city {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--color-text-primary);
+    text-align: center;
+}
+
+.weather {
+    font-size: 0.9rem;
+    color: var(--color-text-primary);
+}
+
+.temp {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+
+}
+
+
+/* Min/Max Temperature Section */
+
+.minmaxContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+}
+
+.min,
+.max {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.max {
+    border-left: 2px solid var(--color-text-primary);
+    padding-left: 1rem;
+}
+
+.maxHeading,
+.minHeading {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    text-align: center;
+}
+
+.maxTemp,
+.minTemp {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    text-align: center;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+    <!-- External StyleSheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="switch.css">
+</head>
+
+<body>
+
+    <!-- Main Container -->
+    <div class="content">
+
+        <!-- Header Section -->
+        <div class="head">
+            <h1>Weather App</h1>
+            <label class="ui-switch">
+                <input type="checkbox">
+                <div class="slider">
+                    <div class="circle"></div>
+                </div>
+            </label>
+        </div>
+
+        <!-- Search Inputs -->
+        <div class="inputs">
+            <input type="text" id="searchCity">
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <!-- Display Data -->
+
+        <p class="city" id="cityName">--</p>
+        <p class="weather" id="weather-description">--</p>
+
+        <svg class="weather" version="1.1" width="50px" height="50px" viewBox="0 0 100 100" xml:space="preserve">
+            <image id="weatherIcon" width="100" height="100" x="0" y="0" href="images/image.png"></image>
+        </svg>
+
+        <p class="temp" id="temperature">--°</p>
+
+        <div class="minmaxContainer">
+
+            <div class="min">
+                <p class="minHeading">Feels Like</p>
+                <p class="minTemp" id="feelsLike">--°</p>
+            </div>
+
+            <div class="max">
+                <p class="maxHeading">Wind Speed</p>
+                <p class="maxTemp" id="windSpeed">-- km/h</p>
+            </div>
+
+        </div>
+
+        <!-- Error message -->
+        <p id="errorMsg" style="display:none; color:red; font-weight:bold;"></p>
+
+    </div>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
