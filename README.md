@@ -4,6 +4,8 @@
 A simple weather application built with **HTML, CSS, and JavaScript**.  
 It fetches real-time weather data using the OpenWeather API.
 
+Live Site -> (https://thisisparth187.github.io/weather-app)
+
 ## Features
 - Search weather by city name 🌍
 - Displays temperature, feels like, wind speed, and weather conditions 🌡️
